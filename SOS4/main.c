@@ -68,10 +68,10 @@ int main(int argc, char * argv[])
 //    customerCount = atoi(argv[1]);
     customerCount = 10;
       printf("Customer count: %i\n", customerCount);
-    Cli = socket(AF_INET,SOCK_STREAM,0);    //create soket
+    Cli = socket(AF_INET,SOCK_STREAM,0);    //create socket
     for_addr.sin_family = AF_INET;        //режим "интернет"
-    for_addr.sin_addr.s_addr = inet_addr("192.168.181.224");    //указывем ip сервера
-    for_addr.sin_port  = htons(8010);
+    for_addr.sin_addr.s_addr = inet_addr("185.251.89.162");    //указывем ip сервера
+    for_addr.sin_port  = htons(8888);
     connect(Cli, (const struct sockaddr*)&for_addr, sizeof (for_addr) );    //коннектимся
     pthread_t threadCustomers[customerCount];
     for (int i = 0; i < customerCount; i++)
